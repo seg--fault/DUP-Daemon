@@ -70,7 +70,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Logic.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="W32.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BSD.h" />
