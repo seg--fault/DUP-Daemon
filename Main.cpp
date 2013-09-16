@@ -1,13 +1,22 @@
 #define LOGLEVEL 0;	//0 = fatal errors, 1 = errors and fatal errors, 2 = warnings, errors, and fatal errors
 
 
+#if defined(_WIN32)
+#define CYCLE_SCAVENGING
+#endif
+
+#include "Logic.h"
+
 #if defined(_WIN32) //we're supporting win32
 #include "W32.h"
 #include <Windows.h>
-#include "Logic.h"
 
 int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int cmdShow)
 {
+	if(OpenMutex(MUTEX_ALL_ACCESS, 0, "gskConcensus"))
+		return ERROR_BUSY;
+	HANDLE hMutex = CreateMutex(0, 0, "gskConsensus");
+	Logic::scavenge_initialize();
 	for(;;)
 	{
 
