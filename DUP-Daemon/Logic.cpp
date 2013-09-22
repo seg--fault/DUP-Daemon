@@ -28,7 +28,7 @@ namespace Logic
 		if(!initOl)
 			return;
 		this.cl = initCl;
-		this.ol = *initOl;
+		this.ol = initOl;
 		for(;;)
 		{
 		}
@@ -36,11 +36,18 @@ namespace Logic
 
 	template<class Order, class Solution>
 	Stack<Order, Solution>::~Stack()
-	{	
+	{
 	}
 
 	template<class Order>
 	Stack<Order, void>::~Stack()
 	{
+	}
+
+	ClosedList::ClosedList(std::size_t hl, std::size_t length)
+	{
+		hashlength = hl;
+		contents = std::vector<std::size_t>();
+		contents.resize(length);
 	}
 }
