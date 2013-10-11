@@ -24,6 +24,9 @@
     <ClCompile Include="Logic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Priority.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="W32.h">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Logic.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Priority.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

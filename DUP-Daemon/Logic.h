@@ -30,15 +30,15 @@ namespace Logic
 		//execute whatever computation comes before processing adjacent vertices
 		virtual void expand() {}
 
-		//the cumulative cost of this stackframe
-		Order cost;
-
 		//the known (min) indegree and the known outdegree
 		virtual int outEdges() {}
 		virtual int inEdges() {}
 
 		//an upper bound (max confidence in O(1)) on the indegree (as a perfect inverse is not always available)
 		virtual int inEdgesUpper() {}
+	
+		//the cumulative cost of this stackframe
+		Order cost;
 	};
 
 	template<class Order, class Solution>
