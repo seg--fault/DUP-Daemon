@@ -11,17 +11,20 @@ class PriorityQueue
 class HashEntry
 {
 public:
-	HashEntry(char *toSerialize, size_t length);
-
+	HashEntry(char*, size_t);
+	HashEntry();
+	bool isContinued();
+	void clear();
+	void serialize(void *, size_t);
 private:
-	void *continuation;
+	char *continuation;
 	char localstore[256];
 };
 
 class HashTable
 {
 public:
-	HashTable(size_t length);
+	HashTable(size_t);
 
 private:
 	HashEntry table[];
